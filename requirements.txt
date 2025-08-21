@@ -1,6 +1,6 @@
 #deepmalusare43
 #zFrfjmBd49gqoI6q
-#mongodb+srv://deepmalusare43:<db_password>@cluster0.to8xi6i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#mongodb+srv://deepmalusare43:zFrfjmBd49gqoI6q@cluster0.to8xi6i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ipykernel
 pandas
 numpy

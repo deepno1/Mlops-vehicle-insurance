@@ -17,3 +17,7 @@ DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO = 0.25
 FILE_NAME = 'data.csv'
 TRAIN_DF = 'train.csv'
 TEST_DF = 'test.csv'
+
+DATA_VALIDATION_DIR = 'data_validation'
+VALIDATION_REPORT_FILE = 'validation_report'
+SCHEMA_FILE_PATH = os.path.join('config','schema.yaml')

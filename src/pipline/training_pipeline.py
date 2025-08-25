@@ -2,11 +2,17 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 from src.components.data_ingestion import dataIngestion
+from src.components.data_validation import DataValidation
 
 class TrainPipeline:
 
     def __init__(self):
-        self.data_ingestion = dataIngestion()
+        try:
+            self.data_ingestion = dataIngestion()
+            self.data_validation = DataValidation()
+            
+        except Exception as e:
+            raise CustomException(e,sys)
 
     def start_data_ingestion(self):
         try:
@@ -22,8 +28,21 @@ class TrainPipeline:
         except Exception as e:
             raise CustomException(e,sys)
         
+    def start_data_validation(self,data_ingestion_artifacts):
+        logging.info("Entered the start_data_validation method of TrainPipeline class")
+        try:
+            data_validation_artifacts =self.data_validation.init_data_validation(data_ingestion_artifacts)
+
+            logging.info("Performed the data validation operation")
+            logging.info("Exited the start_data_validation method of TrainPipeline class")
+
+            return data_validation_artifacts
+        except Exception as e:
+            raise CustomException(e,sys)
+        
     def run_pipeline(self):
         try:
             data_ingestion_artifacts = self.start_data_ingestion()
+            data_validation_artifacts = self.start_data_validation(data_ingestion_artifacts)
         except Exception as e:
             raise CustomException(e,sys)

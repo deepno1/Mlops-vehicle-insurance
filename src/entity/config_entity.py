@@ -21,3 +21,9 @@ class DataIngestionConfig:
     test_df_file_path = os.path.join(data_ingestion_dir,DATA_INGESTED,TEST_DF)
     train_test_split_ratio = DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO
     data_ingestion_collection_name = collection_name
+
+@dataclass
+class DataValidationConfig:
+    data_validation_dir = os.path.join(training_Pipeline_Config.artifact_dir,DATA_VALIDATION_DIR)
+    validation_report_file_path = os.path.join(data_validation_dir,VALIDATION_REPORT_FILE)
+    

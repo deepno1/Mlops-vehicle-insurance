@@ -50,7 +50,7 @@ class DataValidation:
             raise CustomException(e,sys)
         
     @staticmethod
-    def read_data(file_path) -> DataFrame:
+    def read_data(file_path):
         try:
             return pd.read_csv(file_path)
         except Exception as e:

@@ -3,6 +3,7 @@ from src.exception import CustomException
 from src.logger import logging
 from src.components.data_ingestion import dataIngestion
 from src.components.data_validation import DataValidation
+from src.components.data_transformation import DataTransformation
 
 class TrainPipeline:
 
@@ -10,6 +11,7 @@ class TrainPipeline:
         try:
             self.data_ingestion = dataIngestion()
             self.data_validation = DataValidation()
+            self.data_transformation = DataTransformation()
             
         except Exception as e:
             raise CustomException(e,sys)
@@ -40,9 +42,21 @@ class TrainPipeline:
         except Exception as e:
             raise CustomException(e,sys)
         
+    def start_data_transformation(self,data_validation_artifacts,data_ingestion_artifacts):
+        logging.info("Entered the start_data_transformation method of TrainPipeline class")
+        try:
+            data_transformation_artifacts = self.data_transformation.init_data_transformation(data_validation_artifacts,data_ingestion_artifacts)
+            logging.info("Performed the data transformation operation")
+            logging.info("Exited the start_data_transformation method of TrainPipeline class")
+
+            return data_transformation_artifacts
+        except Exception as e:
+            raise CustomException(e,sys)
+        
     def run_pipeline(self):
         try:
             data_ingestion_artifacts = self.start_data_ingestion()
             data_validation_artifacts = self.start_data_validation(data_ingestion_artifacts)
+            data_transformation_artifacts = self.start_data_transformation(data_validation_artifacts,data_ingestion_artifacts)
         except Exception as e:
             raise CustomException(e,sys)

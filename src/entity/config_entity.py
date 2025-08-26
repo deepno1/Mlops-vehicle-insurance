@@ -27,3 +27,9 @@ class DataValidationConfig:
     data_validation_dir = os.path.join(training_Pipeline_Config.artifact_dir,DATA_VALIDATION_DIR)
     validation_report_file_path = os.path.join(data_validation_dir,VALIDATION_REPORT_FILE)
     
+@dataclass
+class DataTransformationConfig:
+    data_transformation_dir = os.path.join(training_Pipeline_Config.artifact_dir,DATA_TRANSFORMATION_DIR)
+    transformed_train_df_file_path = os.path.join(data_transformation_dir,DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,TRAIN_DF.replace('csv','npy'))
+    transformed_test_df_file_path = os.path.join(data_transformation_dir,DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,TEST_DF.replace('csv','npy'))
+    transformed_object_file_path = os.path.join(data_transformation_dir,DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR,PREPROCESSING_OBJECT_FILE)

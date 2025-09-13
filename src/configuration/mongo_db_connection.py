@@ -5,6 +5,9 @@ import certifi
 from src.exception import CustomException
 from src.constants import MONGODB_URL_KEY,DB_NAME
 from src.logger import logging
+from dotenv import load_dotenv
+
+load_dotenv()
 
 ca = certifi.where()
 

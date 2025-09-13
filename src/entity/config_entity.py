@@ -52,3 +52,8 @@ class ModelEvaluationConfig:
     bucket_name : str = MODEL_BUCKET_NAME
     s3_model_path : str = MODEL_FILE_NAME
     changed_threshold_score: float = MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE
+
+@dataclass
+class ModelPusherConfig:
+    bucket_name: str = MODEL_BUCKET_NAME
+    s3_model_path: str = MODEL_FILE_NAME

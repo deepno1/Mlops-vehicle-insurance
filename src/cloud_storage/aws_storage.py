@@ -72,3 +72,17 @@ class SimpleStorageService:
             return model
         except Exception as e:
             raise CustomException(e,sys)
+        
+    def upload_file(self,from_file,bucket_name,to_filename,remove : bool = False):
+        try:
+            logging.info(f"Uploading {from_file} to {to_filename} in {bucket_name}")
+            self.s3_resource.meta.client.upload_file(from_file,bucket_name,to_filename)
+            logging.info(f"Uploaded {from_file} to {to_filename} in {bucket_name}")
+
+            if remove:
+                os.remove(from_file)
+                logging.info(f"Removed local file {from_file} after upload")
+            logging.info("Exited the upload_file method of SimpleStorageService class")
+
+        except Exception as e:
+            raise CustomException(e,sys)

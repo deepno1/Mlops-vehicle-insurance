@@ -6,6 +6,7 @@ from src.components.data_validation import DataValidation
 from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
 from src.components.model_evaluation import ModelEvaluation
+from src.components.model_pusher import ModelPusher
 
 class TrainPipeline:
 
@@ -16,6 +17,7 @@ class TrainPipeline:
             self.data_transformation = DataTransformation()
             self.model_trainer = ModelTrainer()
             self.model_evaluation = ModelEvaluation()
+            self.model_pusher = ModelPusher()
             
         except Exception as e:
             raise CustomException(e,sys)
@@ -70,6 +72,14 @@ class TrainPipeline:
     def start_model_evaluation(self,data_ingestion_artifacts,model_trainer_artifacts):
         try:
             model_evaluation_artifacts = self.model_evaluation.init_model_evaluation(data_ingestion_artifacts,model_trainer_artifacts)
+            return model_evaluation_artifacts
+        except Exception as e:
+            raise CustomException(e,sys)
+        
+    def start_model_pusher(self,model_evaluation_artifacts):
+        try:
+            model_pusher_artifact = self.model_pusher.init_model_pusher(model_evaluation_artifacts)
+            return model_pusher_artifact
         except Exception as e:
             raise CustomException(e,sys)
         
@@ -80,5 +90,11 @@ class TrainPipeline:
             data_transformation_artifacts = self.start_data_transformation(data_validation_artifacts,data_ingestion_artifacts)
             model_trainer_artifacts = self.start_model_trainer(data_transformation_artifacts)
             model_evaluation_artifacts = self.start_model_evaluation(data_ingestion_artifacts,model_trainer_artifacts)
+
+            if not model_evaluation_artifacts.is_model_accepted:
+                logging.info(f"Model not accepted.")
+                return None
+            model_pusher_artifacts = self.start_model_pusher(model_evaluation_artifacts)
+
         except Exception as e:
             raise CustomException(e,sys)

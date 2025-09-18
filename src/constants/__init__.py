@@ -57,3 +57,7 @@ REGION_NAME = "us-east-1"
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
 MODEL_BUCKET_NAME = "my-mlopsproj-model1"
 MODEL_FILE_NAME = "model.pkl"
+
+
+APP_HOST = "0.0.0.0"
+APP_PORT = 5000

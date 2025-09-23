@@ -34,15 +34,15 @@ This project focuses on building a **scalable, production-ready MLOps pipeline**
 
 ## ✨ Features
 
-✅ Modular project structure with `template.py` scaffolding
-✅ Custom **logging & exception handling**
-✅ MongoDB Atlas integration for data storage
-✅ Automated **Data Ingestion → Validation → Transformation**
-✅ Configurable **training pipelines** with reusable entities
-✅ **AWS S3 model registry** for version control
-✅ End-to-end CI/CD pipeline with **GitHub Actions + Self-Hosted Runner**
-✅ Containerized with **Docker** and deployed on **AWS EC2**
-✅ Web app for predictions + on-demand training endpoint
+- ✅ Modular project structure with `template.py` scaffolding
+- ✅ Custom **logging & exception handling**
+- ✅ MongoDB Atlas integration for data storage
+- ✅ Automated **Data Ingestion → Validation → Transformation**
+- ✅ Configurable **training pipelines** with reusable entities
+- ✅ **AWS S3 model registry** for version control
+- ✅ End-to-end CI/CD pipeline with **GitHub Actions + Self-Hosted Runner**
+- ✅ Containerized with **Docker** and deployed on **AWS EC2**
+- ✅ Web app for predictions + on-demand training endpoint
 
 ---
 

@@ -57,6 +57,7 @@ This project focuses on building a **scalable, production-ready MLOps pipeline**
 * **Orchestration**: Custom training & prediction pipelines
 * **Visualization & EDA**: Jupyter Notebooks
 * **Logging & Exception Handling**: Custom modules
+* **Frameworks**: FastAPI (for app deployment)
 
 ---
 

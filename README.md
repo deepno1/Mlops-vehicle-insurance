@@ -10,13 +10,12 @@ This project demonstrates how to take a raw dataset → preprocess → train →
 ## 📌 Table of Contents
 
 1. [Overview](#overview)
-2. [Architecture](#architecture)
-3. [Features](#features)
-4. [Tech Stack](#tech-stack)
-5. [Setup Guide](#setup-guide)
-6. [Pipeline Workflow](#pipeline-workflow)
-7. [CI/CD & Deployment](#cicd--deployment)
-8. [Results & Future Enhancements](#results--future-enhancements)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Setup Guide](#setup-guide)
+5. [Pipeline Workflow](#pipeline-workflow)
+6. [CI/CD & Deployment](#cicd--deployment)
+7. [Results & Future Enhancements](#results--future-enhancements)
 
 ---
 
@@ -30,24 +29,6 @@ This project focuses on building a **scalable, production-ready MLOps pipeline**
 * **Cloud storage (AWS S3) for model artifacts**
 * **Continuous Integration & Continuous Deployment (CI/CD) with GitHub Actions**
 * **Containerization with Docker & deployment on AWS EC2**
-
----
-
-## 🏗️ Architecture
-
-flowchart TD
-    A[Raw Dataset] -->|Upload| B[MongoDB Atlas]
-    B --> C[Data Ingestion]
-    C --> D[Data Validation]
-    D --> E[Data Transformation]
-    E --> F[Model Training]
-    F --> G[Model Evaluation]
-    G -->|Push Best Model| H[AWS S3 Bucket]
-    H --> I[Model Pusher]
-    I --> J[Prediction Pipeline (Flask API)]
-    J --> K[Docker Container]
-    K --> L[GitHub Actions CI/CD]
-    L --> M[AWS EC2 Deployment]
 
 ---
 

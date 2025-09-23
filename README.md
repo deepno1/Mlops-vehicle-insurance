@@ -1,6 +1,6 @@
 ---
 
-# 🚀 Cloud-Native MLOps Pipeline for Vehicle Insurance Prediction
+# 🚀 Cloud-Native MLOps Pipeline for Vehicle Insurance
 
 An **end-to-end Machine Learning Operations (MLOps) pipeline** that automates the **lifecycle of a vehicle insurance prediction model**.
 This project demonstrates how to take a raw dataset → preprocess → train → validate → deploy → monitor, all within a **cloud-native CI/CD ecosystem** using **MongoDB, AWS, Docker, and GitHub Actions**.

@@ -55,7 +55,7 @@ REGION_NAME = "us-east-1"
 
 
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = "my-mlopsproj-model1"
+MODEL_BUCKET_NAME = "my-model-viproj"
 MODEL_FILE_NAME = "model.pkl"
 
 

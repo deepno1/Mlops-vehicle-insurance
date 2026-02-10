@@ -196,7 +196,3 @@ http://<ec2-public-ip>:5000/training
 
 ---
 
-🔥 This project demonstrates the **complete lifecycle of ML in production using MLOps best practices** — from **data to deployment**.
-
----
-
